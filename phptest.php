@@ -5,6 +5,10 @@
     echo "Hello" .  $_GET["name"]; //says "Array"
     print_r($_GET); //prints out contents of Array 
     
+    foreach ($_GET as $id){
+        echo $id . "==>" . $_GET[$id] . "<br>";
+    }
+
     $f = fopen("test.json", "a");
     fwrite($f, "This is a file."); 
     fclose($f);
