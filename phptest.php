@@ -4,5 +4,6 @@
     echo "And you too Coen!!!";
     echo $_GET //says "Array";
     print_r($array);
+    var_dump($array);
 
 ?>
