@@ -1,6 +1,6 @@
 <?php
 
-    echo "Hi Brooke, Why are you late???";
+    echo "Hi <b>Brooke</b>, Why are you late???";
     echo "And you too Coen!!!";
 
 
