@@ -10,8 +10,11 @@
         echo $id . "==>" . $val . "<br>";
     }
 
+    echo '<button type="button">Input!</button>'; 
+
     $f = fopen("test.json", "a");
     fwrite($f, "This is a file."); 
     fclose($f);
 
+    
 ?>
