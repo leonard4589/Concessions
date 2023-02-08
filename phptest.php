@@ -5,7 +5,8 @@
     echo "Hello" .  $_GET["name"] . "<p>"; //says "Array"
     print_r($_GET); //prints out contents of Array 
     echo "<p>";
-    foreach ($_GET as $id ==> $val){
+
+    foreach ($_GET as $id => $val){
         echo $id . "==>" . $val . "<br>";
     }
 
