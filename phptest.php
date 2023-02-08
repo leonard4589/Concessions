@@ -6,7 +6,7 @@
     print_r($_GET); //prints out contents of Array 
     
     foreach ($_GET as $id){
-        echo $id . "==>" . $_GET[$id] . "<br>";
+        echo $id . "==>" . $val . "<br>";
     }
 
     $f = fopen("test.json", "a");
