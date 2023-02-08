@@ -2,6 +2,6 @@
 
     echo "Hi <b>Brooke</b>, Why are you late???";
     echo "And you too Coen!!!";
-    echo $_GET //makes an array
+    echo $_GET //says "Array"
 
 ?>
