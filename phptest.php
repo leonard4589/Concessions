@@ -13,9 +13,12 @@
     echo '<button type="button">Input!</button>'; 
 
     $f = fopen("test.json", "a");
-    fwrite($f, "This is a file."); 
+    fwrite($f, "This is a file. \n"); 
+    fwrite($f, json_encode($_GET) . "\n");
     fclose($f);
     echo "Saved";
+
+
 
     
 ?>
