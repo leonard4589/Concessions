@@ -146,9 +146,11 @@
             var d = new Date(response["Time"]*1000)
             cell1.innerHTML = d.toLocaleString("en-US");
             var cell2 = row.insertCell();
+            var cell3 = row.insertCell();
+            var cell4 = row.insertCell();
             cell2.innerHTML = (response["Name"]);
-            cell2.innerHTML = (response["Item"]);
-            cell2.innerHTML = (response["Quantity"]);
+            cell3.innerHTML = (response["Item"]);
+            cell4.innerHTML = (response["Quantity"]);
           }
 
         }
