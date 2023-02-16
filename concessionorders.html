@@ -49,7 +49,7 @@
               <td><input 
                 type="text" id = "name" placeholder = "John Doe"></td>
               <td>
-                <select name="cars" id="cars">
+                <select name="items" id="item">
                   <option value="Gold Fish">Gold Fish</option>
                   <option value="Motts">Motts</option>
                   <option value="Pop Tart">Pop Tart</option>
@@ -156,7 +156,9 @@
 
         name = document.getElementById("name").value;
         console.log(name);
-        
+        item = document.getElementById("item").value;
+        console.log(item)
+
 
         record.open("GET", url, true);
         record.send();
