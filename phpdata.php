@@ -1,6 +1,6 @@
 <?php
 
-echo "Hi doc";
+echo "Order submitted";
 
 
 
