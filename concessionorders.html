@@ -141,13 +141,13 @@
     </body>
     <script>
       div = document.getElementById("submit");
-      div.addEventListener("click", //function);
+      div.addEventListener("click", save);
     
       function save(){
         url = 'phpdata.php';
 
         record = new XMLHttpRecord();
-        record.onreadystatechange = funtion(){
+        record.onreadystatechange = function(){
           if (this.readyState == 4 && this.status == 200) {
             document.getElementById("server").innerHTML = this.responseText;
             
