@@ -62,11 +62,12 @@
             </tr>
           </table>
         <h2>
-          <button type="button">Submit</button>
+          <button type="button" id="submit">Submit</button>
           <br>
           <br>
             Ending Inventory:
         </h2>
+        <div id="server"></div>
         <table>
             <tr>
                 <th>Item:</th>
@@ -139,9 +140,19 @@
         <h2>
     </body>
     <script>
-      // $f = fopen("test.json", "a");
-      // fwrite($f, "This is a file." \n); 
-      // fwrite($f, json_encode($_GET) . \n);
-      // fclose($f);
-    </script>
+      div = document.getElementById("submit");
+      div.addEventListener("click", //function);
+    
+      function save(){
+        url = 'phpdata.php';
+
+        record = new XMLHttpRecord();
+        record.onreadystatechange = funtion(){
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("server").innerHTML = this.responseText;
+            
+          }
+        }
+      }
+      </script>
 </html>
