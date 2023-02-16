@@ -156,10 +156,22 @@
 
         name = document.getElementById("name").value;
         console.log(name);
+        params = `?Name=${name}`;
+        console.log(params);
+        url += params;
+
         item = document.getElementById("item").value;
-        console.log(item)
+        console.log(item);
+        params = `&Item=${item}`;
+        console.log(params);
+        url += params;
+
         quantity = document.getElementById("quantity").value;
         console.log(quantity);
+        params = `&Quantity=${quantity}`;
+        console.log(params);
+        url += params;
+
 
         console.log(url)
         record.open("GET", url, true);
