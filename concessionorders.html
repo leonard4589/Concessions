@@ -146,7 +146,7 @@
       function save(){
         url = 'phpdata.php';
 
-        record = new XMLHttpRecord();
+        record = new XMLHttpRequest();
         record.onreadystatechange = function(){
           if (this.readyState == 4 && this.status == 200) {
             document.getElementById("server").innerHTML = this.responseText;
