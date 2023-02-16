@@ -144,7 +144,7 @@
             var row = table.insertRow();
             var cell1 = row.insertCell();
             var d = new Date(response["Time"]*1000)
-            cell1.innerHTML = d.toLocaleDateString();
+            cell1.innerHTML = d.toLocaleDateString("en-EN");
           }
 
         }
