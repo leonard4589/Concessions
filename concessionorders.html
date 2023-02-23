@@ -24,6 +24,7 @@
             div {
             color: rgb(123, 33, 1);
             }
+            /* put a # infront of the id of something */
             #gf {
             background-color:rgb(123, 33, 1);
             color: white;
@@ -73,10 +74,12 @@
             <th>Quantity:</th>
             </tr>
             <tr>
+              <!-- three type of options to enter information: simply typing an answer, selecting an option, and choosing a quantity -->
               <td><input 
                 type="text" id = "name" placeholder = "John Doe"></td>
               <td>
                 <select name="items" id="item">
+                  <!-- id each value so that they can be styled seperatly -->
                   <option value="Gold Fish" id="gf">Gold Fish</option>
                   <option value="Motts" id="m">Motts</option>
                   <option value="Pop Tart" id="pt">Pop Tart</option>
@@ -91,6 +94,7 @@
         <h2>
           <button type="button" id="submit">Submit</button>
           <br>
+        <!-- this is where the php file echos that the information submitted was saved. What is echoed can be editied on the php file -->
       <div id="server"></div>
           <br>
             Ending Inventory:
@@ -144,6 +148,7 @@
         <h2>
             History:
         </h2>
+        <!-- id the table so that the json file knows where to send the information saved  -->
         <table id="history">
             <tr>
                 <th>Date:</th>
@@ -156,13 +161,16 @@
         <h2>
     </body>
     <script>
+      // makes the submit botton work
       div = document.getElementById("submit");
       div.addEventListener("click", save);
     
       function save(){
+        // identifies where the information is going to be saved
         url = 'phpdata.php';
-
+        // WHAT DOES THIS DO DOC
         record = new XMLHttpRequest();
+        // function calls information saved in json file and updates the history chart by creating the rows according to what information is submitted
         record.onreadystatechange = function(){
           if (this.readyState == 4 && this.status == 200) {
             document.getElementById("server").innerHTML = this.responseText;
@@ -170,22 +178,27 @@
             var table = document.getElementById("history");
             var row = table.insertRow();
             var cell1 = row.insertCell();
+            // adds the time the submit botton was clicked
             var d = new Date(response["Time"]*1000)
+            // conversts enoch time into a time that we understand
             cell1.innerHTML = d.toLocaleString("en-US");
             var cell2 = row.insertCell();
             var cell3 = row.insertCell();
             var cell4 = row.insertCell();
+            // assigns where the specific information entered goes
             cell2.innerHTML = (response["Name"]);
             cell3.innerHTML = (response["Item"]);
             cell4.innerHTML = (response["Quantity"]);
           }
 
         }
-
+        // takes what was entered in the name input and saves it
         name = document.getElementById("name").value;
         console.log(name);
+        // identifys what the information is
         params = `?Name=${name}`;
         console.log(params);
+        // adds specifications to url
         url += params;
 
         item = document.getElementById("item").value;
@@ -202,6 +215,7 @@
 
 
         console.log(url)
+        // WHAT DOES THIS DO DOC
         record.open("GET", url, true);
         record.send();
       }
