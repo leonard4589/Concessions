@@ -168,7 +168,7 @@
       function save(){
         // identifies where the information is going to be saved
         url = 'phpdata.php';
-        // WHAT DOES THIS DO DOC
+        // the class that handles sent request; "record" is cloning the class so that I can use the funtions myself
         record = new XMLHttpRequest();
         // function calls information saved in json file and updates the history chart by creating the rows according to what information is submitted
         record.onreadystatechange = function(){
@@ -215,8 +215,9 @@
 
 
         console.log(url)
-        // WHAT DOES THIS DO DOC
+        // opening the connection with the php
         record.open("GET", url, true);
+        // sending the information to the json file
         record.send();
       }
 
