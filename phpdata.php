@@ -16,4 +16,9 @@ echo json_encode($_GET["Quantity"]);
 $inventory["Pop Tart"] = 15;
 $inventory["Gold Fish"] = 20;
 $inventory["Motts"] = 40;
+
+$f = fopen("inventory.json", "a");
+fwrite($f, json_encode($inventory) . "\n");
+fclose($f);
+echo json_encode($inventory);
 ?>
