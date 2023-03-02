@@ -1,6 +1,6 @@
 <?php
 
-$f = fopen($inventory);
+$f = fopen("inventory.json");
 fread($f);
 echo fread($f);
 fclose($f);
