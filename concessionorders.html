@@ -46,8 +46,12 @@
         <h2>
             Starting Inventory:
         </h2>
-        <table>
-            <tr>
+        <table id="startinginventory">
+          <tr>
+            <th>Item:</th>
+            <th>Quantity:</th>
+          </tr>
+            <!-- <tr>
               <th id="i">Item:</th>
               <th id="q">Quantity:</th>
             </tr>
@@ -62,7 +66,7 @@
             <tr>
               <td>Pop Tart</td>
               <td>15</td>
-            </tr>
+            </tr> -->
           </table>
         <h2>
             Today's Orders:
@@ -161,6 +165,37 @@
         <h2>
     </body>
     <script>
+
+      function getInventory(){
+        url = 'inventory.php';
+        r = new XMLHttpRequest();
+        r.onreadystatechange = function(){
+          if (this.readyState == 4 && this.status == 200) {
+            let response = JSON.parse(this.responseText);
+            var table = document.getElementById("startinginventory");
+            var row = table.insertRow();
+            var cell1 = row.insertCell();
+            var cell2 = row.insertCell();
+  
+            cell1.innerHTML = (response["Item"]);
+            cell2.innerHTML = (response["Quantity"]);
+
+        }
+      }
+
+        item = document.getElementById("item").value;
+        console.log(item);
+        params = `&Item=${item}`;
+        console.log(params);
+        url += params;
+
+        quantity = document.getElementById("quantity").value;
+        console.log(quantity);
+        params = `&Quantity=${quantity}`;
+        console.log(params);
+        url += params;
+    }
+
       // makes the submit botton work
       div = document.getElementById("submit");
       div.addEventListener("click", save);

@@ -9,16 +9,16 @@ fclose($f);
 $_GET["Time"] = time();
 // echos what is recorded so that I know the information was saved
 echo json_encode($_GET);
-echo json_encode($_GET["Item"]);
-echo json_encode($_GET["Quantity"]);
+// echo json_encode($_GET["Item"]);
+// echo json_encode($_GET["Quantity"]);
 
 
-$inventory["Pop Tart"] = 15;
-$inventory["Gold Fish"] = 20;
-$inventory["Motts"] = 40;
+// $inventory["Pop Tart"] = 15;
+// $inventory["Gold Fish"] = 20;
+// $inventory["Motts"] = 40;
 
-$f = fopen("inventory.json", "a");
-fwrite($f, json_encode($inventory) . "\n");
-fclose($f);
-echo json_encode($inventory);
+// $f = fopen("inventory.json", "a");
+// fwrite($f, json_encode($inventory) . "\n");
+// fclose($f);
+// echo json_encode($inventory);
 ?>
