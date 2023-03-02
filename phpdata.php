@@ -9,7 +9,7 @@ fclose($f);
 $_GET["Time"] = time();
 // echos what is recorded so that I know the information was saved
 echo json_encode($_GET);
-echo json_encode($_GET["Item"]);
+echo json_encode($_GET["Item", "Quantity"]);
 
 
 ?>
