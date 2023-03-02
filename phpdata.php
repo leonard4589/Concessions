@@ -13,4 +13,7 @@ echo json_encode($_GET["Item"]);
 echo json_encode($_GET["Quantity"]);
 
 
+$inventory["Pop Tart"] = 15;
+$inventory["Gold Fish"] = 20;
+$inventory["Motts"] = 40;
 ?>
