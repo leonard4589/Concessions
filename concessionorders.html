@@ -166,47 +166,47 @@
     </body>
     <script>
 
-      function getInventory(){
-        url = 'inventory.php';
-        r = new XMLHttpRequest();
-        r.onreadystatechange = function(){
-          if (this.readyState == 4 && this.status == 200) {
-            let response = JSON.parse(this.responseText);
-            console.log("hi brooke")
-            console.log(response)
-            var table = document.getElementById("startinginventory");
-            var row = table.insertRow();
-            var cell1 = row.insertCell();
-            var cell2 = row.insertCell();
+    //   function getInventory(){
+    //     url = 'inventory.php';
+    //     r = new XMLHttpRequest();
+    //     r.onreadystatechange = function(){
+    //       if (this.readyState == 4 && this.status == 200) {
+    //         let response = JSON.parse(this.responseText);
+    //         console.log("hi brooke")
+    //         console.log(response)
+    //         var table = document.getElementById("startinginventory");
+    //         var row = table.insertRow();
+    //         var cell1 = row.insertCell();
+    //         var cell2 = row.insertCell();
   
-            cell1.innerHTML = (response["Item"]);
-            cell2.innerHTML = (response["Quantity"]);
+    //         cell1.innerHTML = (response["Item"]);
+    //         cell2.innerHTML = (response["Quantity"]);
 
-        }
-      }
+    //     }
+    //   }
 
-        item = document.getElementById("item").value;
-        console.log(item);
-        params = `&Item=${item}`;
-        console.log(params);
-        url += params;
+    //     item = document.getElementById("item").value;
+    //     console.log(item);
+    //     params = `&Item=${item}`;
+    //     console.log(params);
+    //     url += params;
 
-        quantity = document.getElementById("quantity").value;
-        console.log(quantity);
-        params = `&Quantity=${quantity}`;
-        console.log(params);
-        url += params;
+    //     quantity = document.getElementById("quantity").value;
+    //     console.log(quantity);
+    //     params = `&Quantity=${quantity}`;
+    //     console.log(params);
+    //     url += params;
 
-        console.log(url)
-        // opening the connection with the php
-        r.open("GET", url, true);
-        // sending the information to the json file
-        r.send();
-    }
-      getInventory();
-      // makes the submit botton work
-      div = document.getElementById("submit");
-      div.addEventListener("click", save);
+    //     console.log(url)
+    //     // opening the connection with the php
+    //     r.open("GET", url, true);
+    //     // sending the information to the json file
+    //     r.send();
+    // }
+    //   getInventory();
+    //   // makes the submit botton work
+    //   div = document.getElementById("submit");
+    //   div.addEventListener("click", save);
     
       function save(){
         // identifies where the information is going to be saved
